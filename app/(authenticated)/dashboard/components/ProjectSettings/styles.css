@@ -1,0 +1,9 @@
+.rsk-combobox,
+.rsk-combobox__searchbar,
+.rsk-combobox__searchbar__input-container {
+  width: 100%;
+}
+
+.rsk-combobox__list-box {
+  width: 475px;
+}
