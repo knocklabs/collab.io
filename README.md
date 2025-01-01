@@ -1,5 +1,30 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Database Setup
+
+Before starting the development server, you'll need to set up and seed the database:
+
+1. Initialize Prisma and create the database:
+
+```bash
+npx prisma generate
+npx prisma db push
+```
+
+2. Seed the database with initial data:
+
+```bash
+
+npm run seed
+```
+
+To reset the database, you can run:
+
+```bash
+
+npm run destroy
+```
+
 ## Getting Started
 
 First, run the development server:
