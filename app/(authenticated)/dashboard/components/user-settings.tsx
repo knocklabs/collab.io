@@ -1,5 +1,6 @@
 "use client";
 
+import { createWeeklyActivityUpdates } from "@/app/actions/create-weekly-activity-updates";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -8,6 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { useFormStatus } from "react-dom";
 
 interface UserSettingsProps {
   open: boolean;
@@ -103,9 +105,37 @@ export function UserSettings({ open, onOpenChange }: UserSettingsProps) {
               </div>
             </div>
           </div>
+          <div className="border rounded-lg p-4">
+            <div className="flex justify-between items-center">
+              <div>
+                <div className="font-medium">Weekly Updates</div>
+                <div className="text-sm text-muted-foreground">
+                  Receive a weekly digest of your workspace activities and
+                  updates.
+                </div>
+              </div>
+              <form
+                action={async () => {
+                  await createWeeklyActivityUpdates();
+                }}
+              >
+                <SubmitButton />
+              </form>
+            </div>
+          </div>
         </div>
         <Button type="submit">Save changes</Button>
       </DialogContent>
     </Dialog>
+  );
+}
+// Create a submit button component to access form status
+function SubmitButton() {
+  const { pending } = useFormStatus();
+
+  return (
+    <Button type="submit" variant="secondary" disabled={pending}>
+      {pending ? "Scheduling..." : "Get Weekly Updates"}
+    </Button>
   );
 }
