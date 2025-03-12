@@ -11,7 +11,7 @@ export async function createWeeklyActivityUpdates(): Promise<void> {
   }
 
   try {
-    await knock.workflows.createSchedules("weekly-tour-updates", {
+    await knock.workflows.createSchedules("weekly-comment-summary", {
       recipients: [session?.user?.id],
       repeats: [
         {
