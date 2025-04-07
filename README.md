@@ -4,14 +4,22 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 Before starting the development server, you'll need to set up and seed the database:
 
-1. Initialize Prisma and create the database:
+1. Setup .env variables:
+
+```bash
+cp .env.sample .env
+```
+
+And then add all the necessary environment variables. The `KNOCK_SECRET_API_KEY` is required to seed Knock resources as a part of the following setup process.
+
+2. Initialize Prisma and create the database:
 
 ```bash
 npx prisma generate
 npx prisma db push
 ```
 
-2. Seed the database with initial data:
+3. Seed the database with initial data:
 
 ```bash
 
