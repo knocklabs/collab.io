@@ -15,12 +15,12 @@ import { AccountSwitcherWrapper } from "@/app/(authenticated)/dashboard/componen
 
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
-import { NotificationProvider } from "../../providers/notification-provider";
+import { KnockNotificationProviders } from "../../providers/knock-notification-providers";
 import { auth } from "@/auth";
-import { NotificationFeedWrapper } from "../../components/notification-feed-wrapper";
-import { UserNav } from "../../components/user-nav";
 import { signUserToken } from "@/lib/knock";
 import InAppWrapper from "../../components/in-app-wrapper";
+import { UserProfile } from "../../components/user-profile";
+import { AnnouncementCard } from "../../components/announcement-card";
 export default async function DashboardLayout({
   children,
   params,
@@ -63,7 +63,7 @@ export default async function DashboardLayout({
   );
 
   return (
-    <NotificationProvider
+    <KnockNotificationProviders
       userId={session?.user?.id || ""}
       userToken={userToken || ""}
       workspaceId={workspaceId}
@@ -111,7 +111,7 @@ export default async function DashboardLayout({
                 </SidebarGroupContent>
               </SidebarGroup>
               <SidebarGroup>
-                <InAppWrapper />
+                <AnnouncementCard />
               </SidebarGroup>
             </SidebarContent>
           </Sidebar>
@@ -119,8 +119,7 @@ export default async function DashboardLayout({
             <header className="h-14 border-b px-4 flex items-center justify-between w-full flex-shrink-0">
               <div className="flex items-center space-x-4"></div>
               <div className="flex items-center space-x-4">
-                <NotificationFeedWrapper></NotificationFeedWrapper>
-                <UserNav currentUser={session?.user} />
+                <UserProfile currentUser={session?.user} />
               </div>
             </header>
 
@@ -129,7 +128,7 @@ export default async function DashboardLayout({
           </div>
         </div>
       </SidebarProvider>
-    </NotificationProvider>
+    </KnockNotificationProviders>
   );
 }
 

@@ -5,7 +5,7 @@ import {
   KnockProvider,
   KnockFeedProvider,
   KnockSlackProvider,
-  KnockInAppMessagesChannelProvider,
+  KnockGuideProvider,
 } from "@knocklabs/react";
 
 interface NotificationProviderProps {
@@ -15,7 +15,7 @@ interface NotificationProviderProps {
   workspaceId: string;
 }
 
-export function NotificationProvider({
+export function KnockNotificationProviders({
   children,
   userId,
   userToken,
@@ -38,11 +38,12 @@ export function NotificationProvider({
           }
           tenant={workspaceId}
         >
-          <KnockInAppMessagesChannelProvider
-            channelId={process.env.NEXT_PUBLIC_KNOCK_IN_APP_CHANNEL_ID || ""}
+          <KnockGuideProvider
+            channelId={process.env.NEXT_PUBLIC_KNOCK_GUIDE_CHANNEL_ID || ""}
+            readyToTarget={true}
           >
             {children}
-          </KnockInAppMessagesChannelProvider>
+          </KnockGuideProvider>
         </KnockSlackProvider>
       </KnockFeedProvider>
     </KnockProvider>
