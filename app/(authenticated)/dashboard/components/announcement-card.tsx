@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { useGuide } from "@knocklabs/react";
+import { PoweredByKnockPill } from "./powered-by-knock-pill";
 
 export function AnnouncementCard() {
   const { step } = useGuide({ type: "announcement-card" });
@@ -17,12 +18,13 @@ export function AnnouncementCard() {
       onClick={() => step.markAsInteracted()}
       className="bg-white border border-gray-200 rounded-lg shadow max-w-[400px] m-5 relative"
     >
+      <PoweredByKnockPill />
       <img
         src={step.content.image.url}
         alt={step.content.image.alt}
         className="w-full rounded-t-lg block"
       />
-      <button className="absolute top-2 right-2 p-2 bg-transparent border-none cursor-pointer rounded hover:bg-black/5 flex items-center justify-center">
+      {/* <button className="absolute top-2 right-2 p-2 bg-transparent border-none cursor-pointer rounded hover:bg-black/5 flex items-center justify-center">
         <svg
           width="14"
           height="14"
@@ -36,7 +38,7 @@ export function AnnouncementCard() {
           <line x1="18" y1="6" x2="6" y2="18" />
           <line x1="6" y1="6" x2="18" y2="18" />
         </svg>
-      </button>
+      </button> */}
       <div className="p-4">
         <h2 className="m-0 text-[1.1rem] font-semibold text-gray-900">
           {step.content.title}

@@ -18,7 +18,6 @@ import Link from "next/link";
 import { KnockNotificationProviders } from "../../providers/knock-notification-providers";
 import { auth } from "@/auth";
 import { signUserToken } from "@/lib/knock";
-import InAppWrapper from "../../components/in-app-wrapper";
 import { UserProfile } from "../../components/user-profile";
 import { AnnouncementCard } from "../../components/announcement-card";
 export default async function DashboardLayout({
@@ -29,9 +28,9 @@ export default async function DashboardLayout({
   params: Promise<{ workspaceId: string; projectId: string }>;
 }) {
   const session = await auth();
-  console.log(session);
+
   const awaitedParams = await params;
-  console.log(awaitedParams);
+
   const workspaceId = awaitedParams.workspaceId;
   const currentWorkspace =
     (await prisma.workspace.findUnique({

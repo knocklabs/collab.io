@@ -21,12 +21,12 @@ export function KnockNotificationProviders({
   userToken,
   workspaceId,
 }: NotificationProviderProps) {
-  console.log(userId);
   return (
     <KnockProvider
       apiKey={process.env.NEXT_PUBLIC_KNOCK_PUBLIC_API_KEY || ""}
       userId={userId}
       userToken={userToken}
+      logLevel={"debug"}
     >
       <KnockFeedProvider
         feedId={process.env.NEXT_PUBLIC_KNOCK_FEED_CHANNEL_ID || ""}
@@ -41,6 +41,7 @@ export function KnockNotificationProviders({
           <KnockGuideProvider
             channelId={process.env.NEXT_PUBLIC_KNOCK_GUIDE_CHANNEL_ID || ""}
             readyToTarget={true}
+            listenForUpdates={true}
           >
             {children}
           </KnockGuideProvider>

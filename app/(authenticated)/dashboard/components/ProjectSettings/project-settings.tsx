@@ -52,7 +52,6 @@ export function ProjectSettings({ projectId }: ProjectSettingsProps) {
               objectId: projectId,
               collection: "projects",
             }}
-            showConnectedChannelTags
           />
         </div>
       </DialogContent>
