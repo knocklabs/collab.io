@@ -10,16 +10,14 @@ import {
 import { ProjectDetails } from "@/app/(authenticated)/dashboard/components/project-details";
 
 interface PageProps {
-  params: {
+  params: Promise<{
     projectId: string;
     workspaceId: string;
-  };
+  }>;
 }
 
 export default async function ProjectPage({ params }: PageProps) {
-  const awaitedParams = await params;
-  const workspaceId = awaitedParams.workspaceId;
-  const currentProjectId = awaitedParams.projectId;
+  const { workspaceId, projectId: currentProjectId } = await params;
 
   const currentProject = await prisma.project.findUnique({
     where: {
@@ -36,7 +34,7 @@ export default async function ProjectPage({ params }: PageProps) {
 
   const assets = await prisma.asset.findMany({
     where: {
-      projectId: awaitedParams.projectId,
+      projectId: currentProjectId,
     },
     select: {
       id: true,

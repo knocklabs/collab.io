@@ -23,10 +23,9 @@ interface Comment {
 export default async function AssetPage({
   params,
 }: {
-  params: { assetId: string };
+  params: Promise<{ assetId: string }>;
 }) {
-  const awaitedParams = await params;
-  const assetId = awaitedParams.assetId;
+  const { assetId } = await params;
   const asset = await prisma.asset.findUnique({
     where: {
       id: assetId,

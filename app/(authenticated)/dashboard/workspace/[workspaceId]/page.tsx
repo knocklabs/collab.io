@@ -2,17 +2,16 @@
 import { prisma } from "@/lib/prisma";
 
 interface PageProps {
-  params: {
+  params: Promise<{
     workspaceId: string;
-  };
+  }>;
 }
 
 export default async function WorkspacePage({ params }: PageProps) {
-  const awaitedParams = await params;
-  console.log(awaitedParams);
+  const { workspaceId } = await params;
   const users = await prisma.workspace_seat.findMany({
     where: {
-      workspaceId: awaitedParams.workspaceId,
+      workspaceId,
     },
     select: {
       user: {
