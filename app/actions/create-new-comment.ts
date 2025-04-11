@@ -56,7 +56,10 @@ export async function createNewComment({
     recipients: [...userRecipients, ...objectRecipients],
     data: {
       ...comment,
+      assetId,
+      projectId,
       assetName,
+      workspaceId,
     },
     tenant: workspaceId,
   });

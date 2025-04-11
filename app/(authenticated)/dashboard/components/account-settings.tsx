@@ -120,6 +120,7 @@ export function AccountSettings({ open, onOpenChange }: AccountSettingsProps) {
               <SlackAuthButton
                 slackClientId={process.env.NEXT_PUBLIC_SLACK_CLIENT_ID || ""}
                 redirectUrl="http:localhost:3000"
+                additionalScopes={["users:read", "users:read.email"]}
               ></SlackAuthButton>
             }
           />
