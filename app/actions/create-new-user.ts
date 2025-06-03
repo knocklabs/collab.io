@@ -65,6 +65,7 @@ export async function createUser(data: SignupData) {
   await knock.users.identify(user.id, {
     email: user?.email || "",
     name: user?.name || "",
+    avatar: user?.image,
   });
 
   // 6. Get all workspaces
