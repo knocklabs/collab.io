@@ -4,8 +4,8 @@ import { useEffect } from "react";
 import { useGuide } from "@knocklabs/react";
 import { PoweredByKnockPill } from "./powered-by-knock-pill";
 
-export function AnnouncementCard() {
-  const { step } = useGuide({ type: "announcement-card" });
+export function SidebarCard() {
+  const { step } = useGuide({ type: "sidebar-card" });
 
   useEffect(() => {
     if (step) step.markAsSeen();
@@ -18,11 +18,11 @@ export function AnnouncementCard() {
       onClick={() => step.markAsInteracted()}
       className="bg-white border border-gray-200 rounded-lg shadow max-w-[400px] m-5 relative"
     >
-      <PoweredByKnockPill />
+      {/* <PoweredByKnockPill /> */}
       <img
         src={step.content.image.url}
         alt={step.content.image.alt}
-        className="w-full rounded-t-lg block"
+        className="w-full h-48 object-cover rounded-t-lg block aspect-[3/4]"
       />
       {/* <button className="absolute top-2 right-2 p-2 bg-transparent border-none cursor-pointer rounded hover:bg-black/5 flex items-center justify-center">
         <svg
@@ -40,10 +40,10 @@ export function AnnouncementCard() {
         </svg>
       </button> */}
       <div className="p-4">
-        <h2 className="m-0 text-[1.1rem] font-semibold text-gray-900">
+        <h2 className="m-0 text-md font-medium text-gray-900">
           {step.content.title}
         </h2>
-        <p className="mt-2 mb-0 text-sm leading-6 text-gray-500">
+        <p className="mt-2 mb-0 text-sm leading-5 text-gray-700">
           {step.content.body}
         </p>
       </div>
