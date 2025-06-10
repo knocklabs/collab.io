@@ -3,7 +3,6 @@
 import { useEffect } from "react";
 import { useGuide } from "@knocklabs/react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 
 export function SidebarCard() {
   const { step } = useGuide({ type: "sidebar-card" });
@@ -20,11 +19,9 @@ export function SidebarCard() {
       onClick={() => step.markAsInteracted()}
       className="bg-white border border-gray-200 rounded-lg shadow max-w-[400px] m-5 relative"
     >
-      <Image
+      <img
         src={step.content.image.url}
         alt={step.content.image.alt}
-        width={400}
-        height={533}
         className="w-full h-48 object-cover rounded-t-lg block aspect-[3/4]"
       />
       <div className="p-4">
