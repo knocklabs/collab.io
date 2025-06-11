@@ -3,6 +3,13 @@
 import { useEffect } from "react";
 import { useGuide } from "@knocklabs/react";
 import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 
 export function SidebarCard() {
   const { step } = useGuide({ type: "sidebar-card" });
@@ -15,29 +22,32 @@ export function SidebarCard() {
   if (!step) return null;
 
   return (
-    <div
+    <Card
+      className="max-w-[400px] m-5 relative cursor-pointer"
       onClick={() => step.markAsInteracted()}
-      className="bg-white border border-gray-200 rounded-lg shadow max-w-[400px] m-5 relative"
     >
       <img
         src={step.content.image.url}
         alt={step.content.image.alt}
-        className="w-full h-48 object-cover rounded-t-lg block aspect-[3/4]"
+        className="w-full h-48 object-cover rounded-t-xl block aspect-[3/4]"
       />
-      <div className="p-4">
-        <h2 className="m-0 text-md font-medium text-gray-900">
+      <CardContent>
+        <CardTitle className="text-md font-semibold mt-4">
           {step.content.title}
-        </h2>
-        <p className="mt-2 mb-0 text-sm leading-5 text-gray-700">
+        </CardTitle>
+        <CardDescription className="mt-2 mb-0 text-sm leading-5 text-gray-700">
           {step.content.body}
-        </p>
-        <button
-          onClick={() => router.push(step.content.cta_button.action)}
-          className="block w-full bg-black text-white font-medium text-sm px-4 py-2 rounded-md mt-4 border-none cursor-pointer"
+        </CardDescription>
+        <Button
+          onClick={(e) => {
+            e.stopPropagation();
+            router.push(step.content.cta_button.action);
+          }}
+          className="w-full mt-4"
         >
           {step.content.cta_button.text}
-        </button>
-      </div>
-    </div>
+        </Button>
+      </CardContent>
+    </Card>
   );
 }
