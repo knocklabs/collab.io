@@ -28,22 +28,26 @@ export default async function WorkspacePage({ params }: PageProps) {
   return (
     <>
       <h2 className="text-2xl font-bold m-4">Workspace Users</h2>
-      <div className="flex-1 flex w-full overflow-hidden">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 p-4">
+      <div className="px-4 w-full overflow-auto max-h-96">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-x-4 gap-y-2 auto-rows-max">
           {users.map((seat) => (
             <div
               key={seat.user.id}
-              className="p-4 border rounded-md shadow-sm h-24 flex items-center"
+              className="px-4 py-4 max-h-16 flex items-center border rounded-md shadow-sm"
             >
-              <div className="flex items-center gap-4 w-full">
+              <div className="flex items-center gap-2 w-full">
                 <img
                   src={seat.user.image || "/assets/default-avatar.png"}
                   alt={`${seat.user.name}'s avatar`}
-                  className="w-12 h-12 rounded-full"
+                  className="w-8 h-8 rounded-full"
                 />
-                <div className="flex-1">
-                  <h3 className="font-medium">{seat.user.name}</h3>
-                  <p className="text-sm text-gray-600">{seat.user.email}</p>
+                <div className="flex-1 leading-tight">
+                  <h3 className="font-medium text-sm leading-tight m-0">
+                    {seat.user.name}
+                  </h3>
+                  <p className="text-xs text-gray-600 leading-tight m-0">
+                    {seat.user.email}
+                  </p>
                 </div>
               </div>
             </div>
