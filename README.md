@@ -8,7 +8,7 @@ Install dependencies using your favorite package manager:
 npm install
 # or
 yarn install
-# or
+# o
 pnpm install
 ```
 
