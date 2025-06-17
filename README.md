@@ -1,5 +1,17 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Install dependencies
+
+Install dependencies using your favorite package manager:
+
+```bash
+npm install
+# or
+yarn install
+# o
+pnpm install
+```
+
 ## Database Setup
 
 Before starting the development server, you'll need to set up and seed the database:

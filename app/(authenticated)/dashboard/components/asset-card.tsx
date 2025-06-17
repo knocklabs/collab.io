@@ -22,14 +22,16 @@ export function AssetCard({
 }: AssetCardProps) {
   return (
     <Card
-      className="w-full mb-4 cursor-pointer hover:ring-2 hover:ring-primary"
+      className="w-full max-w-[300px] aspect-[3/2] mb-2 cursor-pointer hover:ring-2 hover:ring-primary flex flex-col justify-between"
       onClick={() => onSelect(id)}
     >
-      <CardHeader>
-        <CardTitle>{name}</CardTitle>
+      <CardHeader className="pb-2 px-3">
+        <CardTitle className="text-base line-clamp-2 min-h-[2.5rem]">
+          {name}
+        </CardTitle>
       </CardHeader>
-      <CardContent>
-        <div className="relative w-full pb-[56.25%] mb-4">
+      <CardContent className="pb-2 px-3">
+        <div className="relative w-full aspect-[3/2] mb-2">
           <img
             src={imageUrl}
             alt={name}
@@ -37,7 +39,7 @@ export function AssetCard({
           />
         </div>
       </CardContent>
-      <div className="px-6 pb-4">
+      <div className="px-3 pb-3 flex items-center">
         <Button
           variant="ghost"
           size="sm"

@@ -6,6 +6,7 @@ import { AddAssetModal } from "./add-asset-modal";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useParams, useRouter } from "next/navigation";
 import { ProjectSettings } from "./ProjectSettings/project-settings";
+import { ProjectBanner } from "./project-banner";
 
 interface Asset {
   id: string;
@@ -58,13 +59,16 @@ export function ProjectDetails({
           <h2 className="text-2xl font-bold">{currentProject.name}</h2>
           <ProjectSettings projectId={currentProject.id} />
         </div>
-        <AddAssetModal onAddAsset={handleAddAsset} />
+        <div className="flex items-center gap-4">
+          <ProjectBanner />
+          <AddAssetModal onAddAsset={handleAddAsset} />
+        </div>
       </div>
-      <div className="px-4">
+      <div className="px-4 max-w-4xl">
         <p className="text-muted-foreground">{currentProject.description}</p>
       </div>
-      <ScrollArea className="flex-1 overflow-auto">
-        <div className="grid grid-cols-2 gap-6 p-4 my-6">
+      <ScrollArea className="px-2 flex-1 overflow-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 p-2 my-4">
           {assets.map((asset) => (
             <AssetCard
               key={asset.id}

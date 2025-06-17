@@ -19,7 +19,9 @@ import { KnockNotificationProviders } from "../../providers/knock-notification-p
 import { auth } from "@/auth";
 import { signUserToken } from "@/lib/knock";
 import { UserProfile } from "../../components/user-profile";
-import { AnnouncementCard } from "../../components/announcement-card";
+import { SidebarCard } from "../../components/sidebar-card";
+import { ProjectBanner } from "../../components/project-banner";
+
 export default async function DashboardLayout({
   children,
   params,
@@ -110,7 +112,7 @@ export default async function DashboardLayout({
                 </SidebarGroupContent>
               </SidebarGroup>
               <SidebarGroup>
-                <AnnouncementCard />
+                <SidebarCard />
               </SidebarGroup>
             </SidebarContent>
           </Sidebar>
@@ -118,6 +120,7 @@ export default async function DashboardLayout({
             <header className="h-14 border-b px-4 flex items-center justify-between w-full flex-shrink-0">
               <div className="flex items-center space-x-4"></div>
               <div className="flex items-center space-x-4">
+                {/* <ProjectBanner /> */}
                 <UserProfile currentUser={session?.user} />
               </div>
             </header>
