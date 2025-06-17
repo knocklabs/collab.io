@@ -8,6 +8,8 @@ import {
   KnockGuideProvider,
 } from "@knocklabs/react";
 
+import "@knocklabs/react/dist/index.css";
+
 interface NotificationProviderProps {
   children: ReactNode;
   userToken?: string;
