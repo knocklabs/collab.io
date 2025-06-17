@@ -43,3 +43,7 @@ next-env.d.ts
 
 # db
 prisma/dev.db
+
+# lock files
+yarn.lock
+package-lock.json
