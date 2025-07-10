@@ -41,6 +41,15 @@ body {
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --knock-spacing-4: 1rem;
+    --knock-spacing-6: 1.5rem;
+    --knock-spacing-8: 2rem;
+    --knock-spacing-32: 8rem;
+    --knock-spacing-96: 24rem;
+    --knock-spacing-140: 35rem;
+    --knock-rounded-4: 0.5rem;
+    --knock-shadow-3: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -75,6 +84,15 @@ body {
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --knock-spacing-4: 1rem;
+    --knock-spacing-6: 1.5rem;
+    --knock-spacing-8: 2rem;
+    --knock-spacing-32: 8rem;
+    --knock-spacing-96: 24rem;
+    --knock-spacing-140: 35rem;
+    --knock-rounded-4: 0.5rem;
+    --knock-shadow-3: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
   }
 }
 
@@ -89,4 +107,15 @@ body {
 
 nextjs-portal {
   display: none;
+}
+
+.knock-guide-modal {
+  /* font-family: "Comic Sans MS", cursive, sans-serif !important; */
+  /* background: #000000 !important; */
+  /* color: white !important; */
+  z-index: 11 !important;
+}
+
+.knock-guide-modal__overlay {
+  z-index: 10 !important;
 }
