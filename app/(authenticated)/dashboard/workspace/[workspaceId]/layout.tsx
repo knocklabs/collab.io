@@ -20,7 +20,7 @@ import { auth } from "@/auth";
 import { signUserToken } from "@/lib/knock";
 import { UserProfile } from "../../components/user-profile";
 import { SidebarCard } from "../../components/sidebar-card";
-import { ProjectBanner } from "../../components/project-banner";
+import { Modal } from "@knocklabs/react";
 
 export default async function DashboardLayout({
   children,
@@ -126,10 +126,13 @@ export default async function DashboardLayout({
             </header>
 
             {/* Main Content Container */}
+
             {children}
           </div>
         </div>
       </SidebarProvider>
+      {/* Modal component renders guide modals when users are eligible */}
+      <Modal />
     </KnockNotificationProviders>
   );
 }
