@@ -104,21 +104,18 @@ Workspaces
 | Masrani Global Corporation | masrani-global |/assets/workspaces/masrani.webp
 
 Projects
-| **Name** | **Slug** | **Url** |
-|---------------------------|--------------------|
-| InGen | ingen |/assets/workspaces/ingen.webp
-| BioSyn | biosyn |/assets/workspaces/biosyn.webp
-| Masrani Global Corporation | masrani-global |/assets/workspaces/masrani.webp| **Project Name** | **Description** | **Company** |
-|------------------------------------|----------------------------------------------------------------------------------------------|-------------------|
-| Dinosaur Genome Repository | A shared database for cataloging and storing all known dinosaur genetic material. | ingen |
-| Cross-Species Hybrid Development | Joint research to create and monetize new hybrid dinosaurs for theme parks and private buyers.| masrani-global |
-| Dinosaur Behavioral AI | Development of AI systems to monitor and predict dinosaur behavior for safety and control. | biosyn |
-| Sustainable Dino Enclosures | Design of eco-friendly, secure dinosaur habitats for parks and research facilities. | masrani-global |
-| Global Dinosaur Monitoring Network | A satellite-based system to track free-roaming dinosaurs in the wild post-_Jurassic World_. | biosyn |
-| Advanced Dino Medicine Program | A collaboration to study dinosaur biology and create medical solutions for sick dinosaurs. | ingen |
-| Military Dino Application Program | A joint venture to explore weaponizing dinosaurs for strategic and defense purposes. | biosyn |
-| DNA Editing Ethics Committee | Establishing ethical standards and controls for the use of genetic engineering in dinosaurs. | ingen |
-| Dino-Themed Augmented Reality | Creating AR experiences to let the public interact with dinosaurs virtually for safe monetization. | masrani-global |
+
+| **Project Name**                   | **Description**                                                                                    | **Company**    |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------- | -------------- |
+| Dinosaur Genome Repository         | A shared database for cataloging and storing all known dinosaur genetic material.                  | ingen          |
+| Cross-Species Hybrid Development   | Joint research to create and monetize new hybrid dinosaurs for theme parks and private buyers.     | masrani-global |
+| Dinosaur Behavioral AI             | Development of AI systems to monitor and predict dinosaur behavior for safety and control.         | biosyn         |
+| Sustainable Dino Enclosures        | Design of eco-friendly, secure dinosaur habitats for parks and research facilities.                | masrani-global |
+| Global Dinosaur Monitoring Network | A satellite-based system to track free-roaming dinosaurs in the wild post-_Jurassic World_.        | biosyn         |
+| Advanced Dino Medicine Program     | A collaboration to study dinosaur biology and create medical solutions for sick dinosaurs.         | ingen          |
+| Military Dino Application Program  | A joint venture to explore weaponizing dinosaurs for strategic and defense purposes.               | biosyn         |
+| DNA Editing Ethics Committee       | Establishing ethical standards and controls for the use of genetic engineering in dinosaurs.       | ingen          |
+| Dino-Themed Augmented Reality      | Creating AR experiences to let the public interact with dinosaurs virtually for safe monetization. | masrani-global |
 
 Assets
 | **Project Name** | **Asset Name** | **Author** | **Description** | **Image URL** |
