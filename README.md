@@ -98,7 +98,7 @@ Account
 
 Workspaces
 | **Name** | **Slug** | **Url** |
-|---------------------------|--------------------|
+|----------|----------|---------|
 | InGen | ingen |/assets/workspaces/ingen.webp
 | BioSyn | biosyn |/assets/workspaces/biosyn.webp
 | Masrani Global Corporation | masrani-global |/assets/workspaces/masrani.webp
