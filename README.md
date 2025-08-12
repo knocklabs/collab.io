@@ -25,15 +25,15 @@ cp .env.sample .env
 
 Then add all the necessary environment variables.
 
-| **Variable Name**                    | **Description**                                | **Required** | **Example**              |
-| ------------------------------------ | ---------------------------------------------- | ------------ | ------------------------ |
-| `KNOCK_SECRET_API_KEY`               | Secret API key for Knock notifications         | Yes          | `sk_test_asdfasdf`       |
-| `NEXT_PUBLIC_KNOCK_PUBLIC_API_KEY`   | Public API key for Knock (client-side)         | Yes          | `pk_test_asd`            |
-| `NEXT_PUBLIC_KNOCK_FEED_CHANNEL_ID`  | Knock feed channel ID for in-app notifications | Yes          | `knock_feed_channel_id`  |
-| `NEXT_PUBLIC_KNOCK_GUIDE_CHANNEL_ID` | Knock guide channel ID for in-app guides       | Yes          | `knock_guide_channel_id` |
-| `NEXT_PUBLIC_KNOCK_SLACK_CHANNEL_ID` | Knock Slack channel ID for Slack integration   | Yes          | `knock_slack_channel_id` |
-| `NEXT_PUBLIC_SLACK_CLIENT_ID`        | Slack client ID for Slack integration          | Yes          | `slack_client_id`        |
-| `KNOCK_SIGNING_KEY`                  | Signing key for Knock Slack integration        | Yes          | `knock_signing_key`      |
+| **Variable Name**                    | **Description**                                | **Required** |
+| ------------------------------------ | ---------------------------------------------- | ------------ |
+| `KNOCK_SECRET_API_KEY`               | Secret API key for Knock notifications         | Yes          |
+| `NEXT_PUBLIC_KNOCK_PUBLIC_API_KEY`   | Public API key for Knock (client-side)         | Yes          |
+| `NEXT_PUBLIC_KNOCK_FEED_CHANNEL_ID`  | Knock feed channel ID for in-app notifications | Yes          |
+| `NEXT_PUBLIC_KNOCK_GUIDE_CHANNEL_ID` | Knock guide channel ID for in-app guides       | Yes          |
+| `NEXT_PUBLIC_KNOCK_SLACK_CHANNEL_ID` | Knock Slack channel ID for Slack integration   | Yes          |
+| `NEXT_PUBLIC_SLACK_CLIENT_ID`        | Slack client ID for Slack integration          | Yes          |
+| `KNOCK_SIGNING_KEY`                  | Signing key for Knock Slack integration        | Yes          |
 
 The `KNOCK_SECRET_API_KEY` is required to seed Knock resources as a part of the following setup process. Learn more about the different types of [API keys in Knock](https://docs.knock.app/developer-tools/api-keys).
 
