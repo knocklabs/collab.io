@@ -9,6 +9,9 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
+import { PushSubscribeButton } from "./push-subscribe-button";
+import { PushUnsubscribeButton } from "./push-unsubscribe-button";
+
 interface UserSettingsProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
@@ -104,6 +107,8 @@ export function UserSettings({ open, onOpenChange }: UserSettingsProps) {
             </div>
           </div>
         </div>
+        <PushSubscribeButton></PushSubscribeButton>
+        <PushUnsubscribeButton></PushUnsubscribeButton>
         <Button type="submit">Save changes</Button>
       </DialogContent>
     </Dialog>

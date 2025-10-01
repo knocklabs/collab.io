@@ -21,6 +21,7 @@ import { signUserToken } from "@/lib/knock";
 import { UserProfile } from "../../components/user-profile";
 import { SidebarCard } from "../../components/sidebar-card";
 import { Modal } from "@knocklabs/react";
+import FirebaseProvider from "../../providers/firebase-provider";
 
 export default async function DashboardLayout({
   children,
@@ -69,70 +70,70 @@ export default async function DashboardLayout({
       userToken={userToken || ""}
       workspaceId={workspaceId}
     >
-      <SidebarProvider>
-        <div className="flex min-h-screen w-full">
-          {/* Left Sidebar */}
-          <Sidebar className="w-64 flex-shrink-0" collapsible="offcanvas">
-            <SidebarHeader>
-              <SidebarMenu>
-                <SidebarMenuItem>
-                  <SidebarMenuButton asChild>
-                    <a
-                      href="/dashboard"
-                      className="text-xl font-semibold text-primary"
-                    >
-                      Collab.io
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              </SidebarMenu>
-              <AccountSwitcherWrapper currentWorkspace={currentWorkspace} />
-            </SidebarHeader>
-            <SidebarContent>
-              <SidebarGroup>
-                <SidebarGroupLabel>My projects</SidebarGroupLabel>
-                <SidebarGroupContent>
-                  <SidebarMenu>
-                    {projects.length === 0 ? (
-                      <SidebarMenuItem>No projects found</SidebarMenuItem>
-                    ) : (
-                      projects.map((project) => (
-                        <SidebarMenuItem key={project.id}>
-                          <SidebarMenuButton asChild>
-                            <Link
-                              href={`/dashboard/workspace/${workspaceId}/project/${project.id}`}
-                            >
-                              {project.name}
-                            </Link>
-                          </SidebarMenuButton>
-                        </SidebarMenuItem>
-                      ))
-                    )}
-                  </SidebarMenu>
-                </SidebarGroupContent>
-              </SidebarGroup>
-              <SidebarGroup>
-                <SidebarCard />
-              </SidebarGroup>
-            </SidebarContent>
-          </Sidebar>
-          <div className="flex-1 flex flex-col h-screen">
-            <header className="h-14 border-b px-4 flex items-center justify-between w-full flex-shrink-0">
-              <div className="flex items-center space-x-4"></div>
-              <div className="flex items-center space-x-4">
-                {/* <ProjectBanner /> */}
-                <UserProfile currentUser={session?.user} />
-              </div>
-            </header>
-
-            {/* Main Content Container */}
-
-            {children}
+      <FirebaseProvider>
+        <SidebarProvider>
+          <div className="flex min-h-screen w-full">
+            {/* Left Sidebar */}
+            <Sidebar className="w-64 flex-shrink-0" collapsible="offcanvas">
+              <SidebarHeader>
+                <SidebarMenu>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton asChild>
+                      <a
+                        href="/dashboard"
+                        className="text-xl font-semibold text-primary"
+                      >
+                        Collab.io
+                      </a>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                </SidebarMenu>
+                <AccountSwitcherWrapper currentWorkspace={currentWorkspace} />
+              </SidebarHeader>
+              <SidebarContent>
+                <SidebarGroup>
+                  <SidebarGroupLabel>My projects</SidebarGroupLabel>
+                  <SidebarGroupContent>
+                    <SidebarMenu>
+                      {projects.length === 0 ? (
+                        <SidebarMenuItem>No projects found</SidebarMenuItem>
+                      ) : (
+                        projects.map((project) => (
+                          <SidebarMenuItem key={project.id}>
+                            <SidebarMenuButton asChild>
+                              <Link
+                                href={`/dashboard/workspace/${workspaceId}/project/${project.id}`}
+                              >
+                                {project.name}
+                              </Link>
+                            </SidebarMenuButton>
+                          </SidebarMenuItem>
+                        ))
+                      )}
+                    </SidebarMenu>
+                  </SidebarGroupContent>
+                </SidebarGroup>
+                <SidebarGroup>
+                  <SidebarCard />
+                </SidebarGroup>
+              </SidebarContent>
+            </Sidebar>
+            <div className="flex-1 flex flex-col h-screen">
+              <header className="h-14 border-b px-4 flex items-center justify-between w-full flex-shrink-0">
+                <div className="flex items-center space-x-4"></div>
+                <div className="flex items-center space-x-4">
+                  {/* <ProjectBanner /> */}
+                  <UserProfile currentUser={session?.user} />
+                </div>
+              </header>
+              {/* Main Content Container */}
+              {children}
+            </div>
           </div>
-        </div>
-      </SidebarProvider>
-      {/* Modal component renders guide modals when users are eligible */}
-      <Modal />
+        </SidebarProvider>
+        {/* Modal component renders guide modals when users are eligible */}
+        <Modal />
+      </FirebaseProvider>
     </KnockNotificationProviders>
   );
 }
