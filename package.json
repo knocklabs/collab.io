@@ -14,7 +14,7 @@
   "dependencies": {
     "@auth/prisma-adapter": "^2.7.4",
     "@knocklabs/node": "^0.6.15",
-    "@knocklabs/react": "^0.7.21",
+    "@knocklabs/react": "^0.8.4",
     "@prisma/client": "^6.0.1",
     "@radix-ui/react-avatar": "^1.1.2",
     "@radix-ui/react-dialog": "^1.1.3",
