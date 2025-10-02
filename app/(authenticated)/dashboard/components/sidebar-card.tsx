@@ -39,15 +39,17 @@ export function SidebarCard() {
         <CardDescription className="mt-2 mb-0 text-sm leading-5 text-gray-700">
           {step.content.body}
         </CardDescription>
-        <Button
-          onClick={(e) => {
-            e.stopPropagation();
-            router.push(step.content.cta_button.action);
-          }}
-          className="w-full mt-4"
-        >
-          {step.content.cta_button.text}
-        </Button>
+        {step.content.cta_button && (
+          <Button
+            onClick={(e) => {
+              e.stopPropagation();
+              router.push(step.content.cta_button.action);
+            }}
+            className="w-full mt-4"
+          >
+            {step.content.cta_button.text}
+          </Button>
+        )}
       </CardContent>
     </Card>
   );
