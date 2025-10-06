@@ -20,7 +20,7 @@ import { auth } from "@/auth";
 import { signUserToken } from "@/lib/knock";
 import { UserProfile } from "../../components/user-profile";
 import { SidebarCard } from "../../components/sidebar-card";
-import { Modal } from "@knocklabs/react";
+import { Modal, Card } from "@knocklabs/react";
 
 export default async function DashboardLayout({
   children,
@@ -112,6 +112,7 @@ export default async function DashboardLayout({
                 </SidebarGroupContent>
               </SidebarGroup>
               <SidebarGroup>
+                <Card />
                 <SidebarCard />
               </SidebarGroup>
             </SidebarContent>
