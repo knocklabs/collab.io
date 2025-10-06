@@ -50,6 +50,7 @@ export function AnnouncementCard() {
           {/* Image section */}
           <div className="bg-[#efece7] h-60 w-full relative overflow-hidden rounded-t-lg">
             {content.image?.url && (
+              // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={content.image.url}
                 alt={content.image.alt || "Announcement"}
