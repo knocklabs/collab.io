@@ -20,7 +20,8 @@ import { auth } from "@/auth";
 import { signUserToken } from "@/lib/knock";
 import { UserProfile } from "../../components/user-profile";
 import { SidebarCard } from "../../components/sidebar-card";
-import { Modal } from "@knocklabs/react";
+import { AnnouncementCard } from "../../components/announcement-card";
+import { FeatureModal } from "../../components/feature-modal";
 
 export default async function DashboardLayout({
   children,
@@ -114,6 +115,9 @@ export default async function DashboardLayout({
               <SidebarGroup>
                 <SidebarCard />
               </SidebarGroup>
+              <SidebarGroup>
+                <AnnouncementCard />
+              </SidebarGroup>
             </SidebarContent>
           </Sidebar>
           <div className="flex-1 flex flex-col h-screen">
@@ -131,8 +135,7 @@ export default async function DashboardLayout({
           </div>
         </div>
       </SidebarProvider>
-      {/* Modal component renders guide modals when users are eligible */}
-      <Modal />
+      <FeatureModal />
     </KnockNotificationProviders>
   );
 }
