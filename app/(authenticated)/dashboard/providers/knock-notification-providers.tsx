@@ -7,6 +7,7 @@ import {
   KnockSlackProvider,
   KnockGuideProvider,
 } from "@knocklabs/react";
+import { KnockGuideLocationSensor } from "@knocklabs/react/next";
 
 import "@knocklabs/react/dist/index.css";
 
@@ -44,8 +45,10 @@ export function KnockNotificationProviders({
             channelId={process.env.NEXT_PUBLIC_KNOCK_GUIDE_CHANNEL_ID || ""}
             readyToTarget={true}
             listenForUpdates={true}
+            trackLocationFromWindow={false}
           >
             {children}
+            <KnockGuideLocationSensor.AppRouter />
           </KnockGuideProvider>
         </KnockSlackProvider>
       </KnockFeedProvider>

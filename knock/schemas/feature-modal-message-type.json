@@ -1,0 +1,149 @@
+{
+  "key": "default",
+  "name": "Default",
+  "fields": [
+    {
+      "type": "text",
+      "key": "title",
+      "label": "Title",
+      "settings": {
+        "required": true,
+        "description": null,
+        "placeholder": null,
+        "default": "Modal title",
+        "minLength": 3,
+        "maxLength": 64
+      }
+    },
+    {
+      "type": "markdown",
+      "key": "body",
+      "label": "Body",
+      "settings": {
+        "required": true,
+        "description": null,
+        "placeholder": null,
+        "default": "Copy about a feature or an action that the user should be aware of."
+      }
+    },
+    {
+      "type": "image",
+      "key": "image",
+      "label": "Image",
+      "url": {
+        "type": "url",
+        "key": "url",
+        "label": "Image URL",
+        "settings": {
+          "required": true,
+          "description": null,
+          "placeholder": null,
+          "default": ""
+        }
+      },
+      "alt": {
+        "type": "text",
+        "key": "alt",
+        "label": "Alt text",
+        "settings": {
+          "required": false,
+          "description": null,
+          "placeholder": null,
+          "default": "",
+          "minLength": null,
+          "maxLength": null
+        }
+      },
+      "action": {
+        "type": "text",
+        "key": "action",
+        "label": "Image action",
+        "settings": {
+          "required": false,
+          "description": null,
+          "placeholder": null,
+          "default": "",
+          "minLength": null,
+          "maxLength": null
+        }
+      },
+      "settings": {
+        "required": true,
+        "description": null,
+        "placeholder": null
+      }
+    },
+    {
+      "type": "button",
+      "key": "primary_button",
+      "label": "Primary Button",
+      "text": {
+        "type": "text",
+        "key": "text",
+        "label": "Button Text",
+        "settings": {
+          "required": true,
+          "description": null,
+          "placeholder": null,
+          "default": "Primary",
+          "minLength": 1,
+          "maxLength": 20
+        }
+      },
+      "action": {
+        "type": "text",
+        "key": "action",
+        "label": "Button Action",
+        "settings": {
+          "required": true,
+          "description": null,
+          "placeholder": null,
+          "default": "",
+          "minLength": 1,
+          "maxLength": 100
+        }
+      },
+      "settings": {
+        "required": true,
+        "description": "Primary action button",
+        "placeholder": null
+      }
+    },
+    {
+      "type": "button",
+      "key": "secondary_button",
+      "label": "Secondary Button",
+      "text": {
+        "type": "text",
+        "key": "text",
+        "label": "Button Text",
+        "settings": {
+          "required": true,
+          "description": null,
+          "placeholder": null,
+          "default": "Secondary",
+          "minLength": 1,
+          "maxLength": 20
+        }
+      },
+      "action": {
+        "type": "text",
+        "key": "action",
+        "label": "Button Action",
+        "settings": {
+          "required": true,
+          "description": null,
+          "placeholder": null,
+          "default": "",
+          "minLength": 1,
+          "maxLength": 100
+        }
+      },
+      "settings": {
+        "required": true,
+        "description": "Secondary action button",
+        "placeholder": null
+      }
+    }
+  ]
+}
